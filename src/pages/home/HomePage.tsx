@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import StickySocials from "../../components/StickySocials";
 import GallerySection from "./GallerySection";
 import HeroSection from "./HeroSection";
 import RoadmapSection from "./RoadmapSection";
@@ -16,6 +17,7 @@ const StyledHomePage = styled.div`
 const HomePage = () => {
   return (
     <StyledHomePage>
+      <StickySocials />
       <HeroSection />
       <GallerySection />
       <StorySection />

@@ -36,7 +36,7 @@ const Index = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--primary);
   font-weight: 500;
   padding: 0.5rem;

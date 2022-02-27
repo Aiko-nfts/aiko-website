@@ -6,8 +6,10 @@ const StyledSocial = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 6rem;
+  width: 5rem;
   aspect-ratio: 1;
+  background: #8eaad1;
+  clip-path: var(--hex);
 `;
 
 const Icon = styled.img`
@@ -21,11 +23,9 @@ interface Props {
 
 const Social = ({ link, icon }: Props) => {
   return (
-    <Hexify>
-      <StyledSocial href={link} target="_blank" rel="noopener noreferrer">
-        <Icon src={icon} alt="Social Icon" />
-      </StyledSocial>
-    </Hexify>
+    <StyledSocial href={link} target="_blank" rel="noopener noreferrer">
+      <Icon src={icon} alt="Social Icon" />
+    </StyledSocial>
   );
 };
 

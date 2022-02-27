@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Section from "../../components/Section";
 import Header from "../../components/Header";
 import blueBg from "../../assets/svgs/blue-bg.svg";
-import Socials from "../../components/Socials";
+// import Socials from "../../components/Socials";
 import Logo from "../../components/Logo";
 import girlFace from "../../assets/illustrations/girl-face.png";
 
@@ -58,9 +58,9 @@ const StorySection = () => {
       <Container>
         <Background src={blueBg} alt="Gallery background" />
         <Content>
-          <SocialsContainer>
+          {/* <SocialsContainer>
             <Socials index={2} />
-          </SocialsContainer>
+          </SocialsContainer> */}
           <Header>A:\Story</Header>
           <Body>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

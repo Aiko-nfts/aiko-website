@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import styled from "styled-components";
 
 import Logo from "./Logo";
-import Socials from "./Socials";
+// import Socials from "./Socials";
 import plus from "../assets/svgs/plus.svg";
 
 const StyledSection = styled.div`
@@ -16,11 +16,11 @@ const StyledSection = styled.div`
   padding: 7rem 0;
 `;
 
-const SocialsContainer = styled.div`
-  position: absolute;
-  top: 7rem;
-  left: 7rem;
-`;
+// const SocialsContainer = styled.div`
+//   position: absolute;
+//   top: 7rem;
+//   left: 7rem;
+// `;
 
 const LogoContainer = styled.div`
   position: absolute;
@@ -69,11 +69,11 @@ const Section = ({
   return (
     <StyledSection>
       {children}
-      {socials && index && (
+      {/* {socials && index && (
         <SocialsContainer>
           <Socials index={index} />
         </SocialsContainer>
-      )}
+      )} */}
       {logo && (
         <LogoContainer>
           <Logo />
