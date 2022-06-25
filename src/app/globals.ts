@@ -11,5 +11,5 @@ export const ETH_GLOBALS: GlobalsType = {
 };
 
 export const RINKEBY_GLOBALS: GlobalsType = {
-  AIKO: "0xD010802fAbE29FEd5EA340306e1F92fF46A7Ad21",
+  AIKO: "0xba0ccf6eeaC17875B39DB4b5C8d2e19A4f4b5EAF",
 };
