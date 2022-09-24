@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import background from "../assets/stamps/background.svg";
+import StampStar from "./StampStar";
 
 const StyledStamp = styled.button`
   position: relative;
@@ -24,9 +25,22 @@ const Content = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  padding: 3.1rem 1.2rem; ;
+  padding: 3.1rem 1.2rem;
+`;
+
+const Line = styled.div`
+  width: 100%;
+  height: 2px;
+  background: #567ca1;
+  margin-bottom: 1.4rem;
+`;
+
+const Stars = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.1rem;
 `;
 
 export interface StampType {
@@ -41,9 +55,16 @@ interface Props {
 
 const Stamp = ({ stamp, selectStamp }: Props) => {
   return (
-    <StyledStamp>
+    <StyledStamp onClick={() => selectStamp()}>
       <Background src={background} alt="Stamp background" />
-      <Content>{stamp.stars}</Content>
+      <Content>
+        <Line />
+        <Stars>
+          <StampStar on={stamp.stars > 0} />
+          <StampStar on={stamp.stars > 1} />
+          <StampStar on={stamp.stars > 2} />
+        </Stars>
+      </Content>
     </StyledStamp>
   );
 };
