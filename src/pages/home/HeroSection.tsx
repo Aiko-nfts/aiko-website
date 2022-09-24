@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 import NavItems from "../../components/NavItems";
@@ -8,6 +9,7 @@ import bg from "../../assets/illustrations/bg.svg";
 import Connector from "../../components/Connector";
 import Tabs from "../../components/Tabs";
 import MintButton from "../../components/MintButton";
+import StampOverview from "../../components/StampOverview";
 
 const Background = styled.img`
   position: absolute;
@@ -70,6 +72,9 @@ const MintButtonContainer = styled.div`
 `;
 
 const HeroSection = () => {
+  const [showStamps, setShowStamps] = useState(false);
+  const [stamp, setStamp] = useState("");
+
   return (
     <Section id="home-scroll">
       <Background src={bg} alt="Background" />
@@ -77,7 +82,7 @@ const HeroSection = () => {
         <HeroImage src={heroImage} alt="Hero image" />
         <Tabs />
         <MintButtonContainer>
-          <MintButton />
+          <MintButton action={() => setShowStamps(true)} />
         </MintButtonContainer>
         <Wing autoPlay muted loop>
           <source src="/assets/wing.mp4" type="video/mp4; codecs=hvc1" />
@@ -86,6 +91,11 @@ const HeroSection = () => {
       </ImageContainer>
       <Connector />
       <NavItems />
+      <StampOverview
+        show={showStamps}
+        close={() => setShowStamps(false)}
+        setStamp={(s: string) => setStamp(s)}
+      />
     </Section>
   );
 };
