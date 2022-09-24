@@ -9,6 +9,7 @@ const StyledStampOverview = styled.div`
   height: 100%;
   width: 100%;
   flex-direction: column;
+  align-items: center;
 `;
 
 const Header = styled.div`
@@ -16,19 +17,57 @@ const Header = styled.div`
   width: 100%;
   align-items: flex-start;
   justify-content: space-between;
+  margin-bottom: 2rem;
 `;
 
 const HeaderIcon = styled.img`
   height: 5.7rem;
 `;
 
-const Button = styled.button`
+const RewardsButton = styled.button`
   height: 5.7rem;
   margin: 0 1.5rem;
   color: #9b8321;
   font-weight: 500;
   font-size: 3.5rem;
   line-height: 50px;
+  text-transform: uppercase;
+`;
+
+const SubHeader = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  color: #567ca1;
+  font-size: 2.4rem;
+  font-weight: 500;
+  letter-spacing: 0em;
+  margin-bottom: 3.8rem;
+`;
+
+const StampContainer = styled.div`
+  width: 100%;
+  flex: 1;
+  background: #f5d06e;
+  display: flex;
+  margin-bottom: 3.8rem;
+`;
+
+const RedeemButton = styled.button`
+  height: 7.9rem;
+  font-family: Video;
+  font-size: 6.4rem;
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+  margin: 0 2.5rem;
+`;
+
+const ButtonDescription = styled.div`
+  color: #567ca1;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 1.8rem;
 `;
 
 interface Props {
@@ -44,11 +83,19 @@ const StampOverview = ({ show, close, setStamp }: Props) => {
         <Header>
           <HeaderIcon src={header} alt="Stamp header icon" />
           <Hexify yellow>
-            <Button onClick={() => alert("Not implemented yet")}>
-              REWARDS
-            </Button>
+            <RewardsButton onClick={() => alert("Not implemented yet")}>
+              rewards
+            </RewardsButton>
           </Hexify>
         </Header>
+        <SubHeader>You have collected XX/YY stamps this season</SubHeader>
+        <StampContainer>meow</StampContainer>
+        <Hexify dark>
+          <RedeemButton>redeem</RedeemButton>
+        </Hexify>
+        <ButtonDescription>
+          Redeem only will be available on: XX/XX/XXXX
+        </ButtonDescription>
       </StyledStampOverview>
     </StampPopup>
   );
