@@ -3,6 +3,26 @@ import StampPopup from "./StampPopup";
 
 import header from "../assets/stamps/header.svg";
 import Hexify from "./Hexify";
+import Stamp, { StampType } from "./Stamp";
+
+const stamps: StampType[] = [
+  {
+    name: "1",
+    stars: 1,
+  },
+  {
+    name: "2",
+    stars: 2,
+  },
+  {
+    name: "3",
+    stars: 3,
+  },
+  {
+    name: "4",
+    stars: 4,
+  },
+];
 
 const StyledStampOverview = styled.div`
   display: flex;
@@ -32,6 +52,7 @@ const RewardsButton = styled.button`
   font-size: 3.5rem;
   line-height: 50px;
   text-transform: uppercase;
+  cursor: pointer;
 `;
 
 const SubHeader = styled.div`
@@ -48,9 +69,10 @@ const SubHeader = styled.div`
 const StampContainer = styled.div`
   width: 100%;
   flex: 1;
-  background: #f5d06e;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   margin-bottom: 3.8rem;
+  grid-gap: 2.7rem;
 `;
 
 const RedeemButton = styled.button`
@@ -61,6 +83,7 @@ const RedeemButton = styled.button`
   color: white;
   text-transform: uppercase;
   margin: 0 2.5rem;
+  cursor: pointer;
 `;
 
 const ButtonDescription = styled.div`
@@ -89,9 +112,15 @@ const StampOverview = ({ show, close, setStamp }: Props) => {
           </Hexify>
         </Header>
         <SubHeader>You have collected XX/YY stamps this season</SubHeader>
-        <StampContainer>meow</StampContainer>
+        <StampContainer>
+          {stamps.map((stamp) => (
+            <Stamp stamp={stamp} selectStamp={() => setStamp(stamp.name)} />
+          ))}
+        </StampContainer>
         <Hexify dark>
-          <RedeemButton>redeem</RedeemButton>
+          <RedeemButton onClick={() => alert("Not implemented yet")}>
+            redeem
+          </RedeemButton>
         </Hexify>
         <ButtonDescription>
           Redeem only will be available on: XX/XX/XXXX
