@@ -38,7 +38,7 @@ Welcome to the repo for the Aiko Virtual website - a React project implementing 
 > yarn start
 ```
 
-- Open http://localhost:3000/ to view the website.
+- Open http://localhost:3000/ to view the website
 
 ## License
 

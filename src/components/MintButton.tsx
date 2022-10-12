@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import Hexify from "./Hexify";
 
-const ButtonArea = styled.div`
+const ButtonArea = styled.button`
+  cursor: pointer;
   position: relative;
   display: flex;
   align-items: center;
@@ -17,11 +18,15 @@ const Countdown = styled.div`
   align-items: center;
 `;
 
-const MintButton = () => {
+interface Props {
+  action: () => void;
+}
+
+const MintButton = ({ action }: Props) => {
   return (
     <Hexify>
-      <ButtonArea>
-        <Countdown>A:\Sold Out</Countdown>
+      <ButtonArea onClick={() => action()}>
+        <Countdown>A:\Stamps</Countdown>
       </ButtonArea>
     </Hexify>
   );
